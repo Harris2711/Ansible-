@@ -1,0 +1,15 @@
+ansible -m fetch -a "src=/home/ubuntu/new dest=/home/ubuntu/{{inventory_hostname}} flat=yes" all : to download the file from host server
+new: file name u want to download from host server
+
+ ansible -m copy -a "src=/home/ubuntu/new dest=/home/ubuntu backup=yes" all : to copy a file from master to hostserver
+
+  ansble -m file -a "path=/home/ubuntu/miakhalifa state=touch" all : to create a file or folder in hostserver
+  state:
+  touch: to create file
+ absent: to delete file or folder
+  directory: to create directory
+
+
+  ansible -m copy -a "content='hi' dest=/home/ubuntu/miakhalifa" all : to add content to the file 
+
+  

@@ -1,0 +1,14 @@
+apt install python3-pip
+pip3 install boto3
+pip3 installansible
+
+to access the ec2.py 
+
+by using ./ec2.py we can connect to aws 
+
+ansible -i ec2.py -m ping all
+
+to ping the hosts using dynamic inventories
+
+
+ansible -i ec2.py -m .yml to exectue the yml command using dynamic inventories

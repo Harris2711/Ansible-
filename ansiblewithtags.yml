@@ -1,0 +1,21 @@
+- hosts: miakhalifa
+  become: true
+  tasks:
+     - name: "installing apache2"
+       tags: "apache2"
+       apt:
+          name: apache2
+          state: absent
+     - name: "install chestuna ra unzip ne"
+       tags: "unzip"
+       apt:
+          name: unzip
+          state: present
+
+ansible-playbook .yml --tags "tagname"
+
+
+
+ansible-playbook .yml to execute playbook
+
+ansible-playbook .yml --skip-tags "tagname" to skip the application
