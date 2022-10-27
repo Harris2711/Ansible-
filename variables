@@ -1,0 +1,39 @@
+##declare a variable in the varaiable file.. import the variable file in the ansible playbook..
+ 
+##create a variable.yaml file
+
+##example
+
+---
+username: admin
+
+then, create a playbook.yaml
+
+
+---
+
+- name: printing name
+  hosts: all
+  tasks:
+    - include_vars: /path/to/variable.yaml
+
+    - debug: msg={{ username }}
+    
+    
+  
+then execute the playbook 
+ansble-playbook playbook.yaml
+
+
+###to use variable in the playbook file 
+
+---
+- hosts: all
+  vars:
+    username: admin
+    password: 123456
+    id: 456
+  tasks:
+    - name: testing
+    - debug: msg={{ username }}
+      
